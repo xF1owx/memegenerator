@@ -13,18 +13,18 @@ $path = implode('/', $url);
 var_dump($path);
 
 switch ($path) {
-case '/memegenerator':
-case '/memegenerator/' :
+case '/mgenerator':
+case '/mgenerator/' :
 require_once('controllers/home.php');
 break;
 
-case '/memegenerator/upload':
-case '/memegenerator/upload/':
+case '/mgenerator/upload':
+case '/mgenerator/upload/':
 require_once('controllers/upload.php');
 break;
 
-case '/memegenerator/creation':
-case '/memegenerator/creation/':
+case '/mgenerator/creation':
+case '/mgenerator/creation/':
 require_once('controllers/upload.php');
 break;
 
