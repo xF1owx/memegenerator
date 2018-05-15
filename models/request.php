@@ -6,9 +6,10 @@ require_once('../utils/bdd.php');
 
  // insérer le nom de l'image envoyée par l'utilisateur
  //  $sql = "INSERT INTO image (name_image) VALUES (\'recup_img_user\')";
- function uploadImg(){
+ function uploadImg($){
  	global $bdd;
- 	$response=$bdd->prepare("INSERT INTO image (name_image) VALUES (\'recup_img_user\')");
+ 	$response=$bdd->prepare("INSERT INTO image (name_image) VALUES (:name_image)");
+ 	$response->bindParam(":name_image", $name_image, PDO::PARAM_INT);
  	$response->execute();
 
  	$result=$response->fetchAll(PDO::FETCH_ASSOC);
