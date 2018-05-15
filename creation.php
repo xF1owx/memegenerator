@@ -11,19 +11,16 @@
 
 <body>
 
-    <form id="idform" autocomplete="off" method="post" action="models/request.php">
+    <form id="uploadForm" method="post" action="models/request.php" enctype="multipart/form-data">
 
         <p>
-            <input type="text" name="chemin" placeholder="Path">
-            <input type="submit" name="submit" value="Parcourir">
-        </p>
 
-
-
-        <p>
-            <input type="text" name="email" placeholder="Nom du fichier">
+            <input type="hidden" name="MAX_FILE_SIZE" value="32481010">
+            <input type="file" name="path">    </br> 
+            
             <input type="submit" name="upload" value="Envoyer">
         </p>
+
     </form>
 </body>
 
