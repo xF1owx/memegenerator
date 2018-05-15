@@ -2,11 +2,13 @@
 
 require_once('../utils/bdd.php');
 
-$fileName = $_FILES['upFile']['name']; //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
+$_FILES['upFile']['name']; //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
+
 // $_FILES['icone']['type'] //Le type du fichier. Par exemple, cela peut être « image/png ».
 $_FILES['upFile']['size']; //La taille du fichier en octets.
 // $_FILES['icone']['tmp_name'] //L'adresse vers le fichier uploadé dans le répertoire temporaire.
 // $_FILES['icone']['error'] //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
+
 
 var_dump($_FILES['upFile']['name']);
 var_dump($_FILES['upFile']['size']);
@@ -19,16 +21,18 @@ var_dump($_FILES['upFile']['size']);
 
 
 
- // insérer le nom de l'image envoyée par l'utilisateur
- //  $sql = "INSERT INTO image (name_image) VALUES (\'recup_img_user\')";
-//  function uploadImg(){
+
+//  // insérer le nom de l'image envoyée par l'utilisateur
+//  //  $sql = "INSERT INTO image (name_image) VALUES (\'recup_img_user\')";
+// function uploadImg(){
 //  	global $bdd;
-//  	$response=$bdd->prepare("INSERT INTO image (name_image) VALUES (\'recup_img_user\')");
+//  	$response=$bdd->prepare("INSERT INTO image (name_image) VALUES (:name_image)");
+//  	$response->bindParam(":name_image", $name_image, PDO::PARAM_INT);
 //  	$response->execute();
 
-//  	$result=$response->fetchAll(PDO::FETCH_ASSOC);
+// 	$result=$response->fetchAll(PDO::FETCH_ASSOC);
 
-//  	return $result;
+//   	return $result;
 // }
 
 // uploadImg();
@@ -49,8 +53,8 @@ var_dump($_FILES['upFile']['size']);
 
 
 
-// //affiche image séléctionnée dans les miniatures
-// // $sql = "SELECT name_image FROM `image` WHERE name_image=\"rangutan-original.jpg\"";
+// // //affiche image séléctionnée dans les miniatures
+// // // $sql = "SELECT name_image FROM `image` WHERE name_image=\"rangutan-original.jpg\"";
 // function showImg($id_image){
 // 	global $bdd;
 // 	$response=$bdd->prepare("SELECT name_image FROM `image` WHERE id_image=:idImage");
@@ -62,8 +66,10 @@ var_dump($_FILES['upFile']['size']);
 
 // 	var_dump($result);
 	
+
 // 	return $result;
 // }
 // showImg(); 
+
 
 
