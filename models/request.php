@@ -1,8 +1,8 @@
 <?php
 
-require_once('../utils/bdd.php');
+require_once('/utils/bdd.php');
 
-$_FILES['upFile']['name']; //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
+$fileName = $_FILES['upFile']['name']; //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
 
 // $_FILES['icone']['type'] //Le type du fichier. Par exemple, cela peut être « image/png ».
 $_FILES['upFile']['size']; //La taille du fichier en octets.
@@ -12,6 +12,11 @@ $_FILES['upFile']['size']; //La taille du fichier en octets.
 
 var_dump($_FILES['upFile']['name']);
 var_dump($_FILES['upFile']['size']);
+
+echo "<br>";
+// var_dump($_FILES['upFile']['size']);
+
+var_dump($_FILES);
 
 
 
@@ -24,18 +29,19 @@ var_dump($_FILES['upFile']['size']);
 
 //  // insérer le nom de l'image envoyée par l'utilisateur
 //  //  $sql = "INSERT INTO image (name_image) VALUES (\'recup_img_user\')";
-// function uploadImg(){
-//  	global $bdd;
-//  	$response=$bdd->prepare("INSERT INTO image (name_image) VALUES (:name_image)");
-//  	$response->bindParam(":name_image", $name_image, PDO::PARAM_INT);
-//  	$response->execute();
+function uploadImg($name_image){
+    
+ 	global $bdd;
+ 	$response=$bdd->prepare("INSERT INTO image(name_image) VALUES (:name_image)");
+ 	$response->bindParam(":name_image", $name_image, PDO::PARAM_STR);
+ 	$response->execute();
 
-// 	$result=$response->fetchAll(PDO::FETCH_ASSOC);
+	$result=$response->fetchAll(PDO::FETCH_ASSOC);
 
-//   	return $result;
-// }
-
-// uploadImg();
+  	return $result;
+}
+if ($_FILES['upFile']['error'] > 0) $erreur = "Erreur lors du transfert"; 
+uploadImg($fileName);
 
 // // affichage des 15 dernières images
 // // $sql = "SELECT id_image FROM `image` ORDER BY `id_image` DESC LIMIT 15";
