@@ -5,31 +5,34 @@
  if(count($url) > 3){
     array_pop($url);
 }
-var_dump($url);
-echo "<br>";
-var_dump($url);
-echo "<br>";
+// var_dump($url);
+// echo "<br>";
+// var_dump($url);
+// echo "<br>";
 $path = implode('/', $url);
-var_dump($path);
+// var_dump($path);
 
 switch ($path) {
-case '/mgenerator':
-case '/mgenerator/' :
+case '/memegenerator':
+case '/memegenerator/' :
 require_once('controllers/home.php');
 break;
 
-case '/mgenerator/upload':
-case '/mgenerator/upload/':
+case '/memegenerator/upload':
+case '/memegenerator/upload/':
+case '/memegenerator/upload/send':
+case '/memegenerator/upload/send/':
 require_once('controllers/upload.php');
 break;
 
-case '/mgenerator/creation':
-case '/mgenerator/creation/':
-require_once('controllers/upload.php');
+
+case '/memegenerator/creation':
+case '/memegenerator/creation/':
+require_once('controllers/creation.php');
 break;
 
-default:
+// default:
 
-require_once('controllers/404-error.php');
-break;
+// require_once('controllers/404-error.php');
+// break;
 } 

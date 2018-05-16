@@ -1,0 +1,17 @@
+#on suit les liens symboliques
+
+Options +FollowSymLinks
+
+#Activation du mod rewrite d'apache
+
+RewriteEngine On
+
+RewriteRule ^home/$ index.php [L,QSA]
+RewriteRule ^/$ index.php [L,QSA]
+RewriteRule ^memegenerator/$ index.php [L,QSA]
+
+RewriteRule ^upload/$ index.php [L,QSA]
+
+RewriteRule ^creation/$ index.php [L,QSA]
+
+ErrorDocument 404 /memegenerator/index.php 
