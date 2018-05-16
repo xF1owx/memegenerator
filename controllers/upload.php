@@ -25,7 +25,8 @@ if (isset($_FILES['upFile'])){
     }
 }
 
-// $showMini = showMini();
+showMini();
+
 
 
 
