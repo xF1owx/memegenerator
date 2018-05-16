@@ -25,8 +25,11 @@ if (isset($_FILES['upFile'])){
     }
 }
 
-// $showMini = showMini();
+$result = showMini();
 
-
-
+echo "<div class='container'>";
+for ($i=0; $i<15; $i++){
+   echo "<img class='miniature' src='assets/medias/img/".$result[$i]["name_image"]."'>";
+}
+echo "</div>";
 // sleep(3);

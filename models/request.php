@@ -21,17 +21,17 @@ function uploadImg($name_image){
 // affichage des 15 dernières images
 // $sql = "SELECT id_image FROM `image` ORDER BY `id_image` DESC LIMIT 15";
 
-// function showMini(){
-// 	global $bdd;
-// 	$response=$bdd->prepare("SELECT name_image FROM `image` ORDER BY `id_image` DESC LIMIT 15");
-// 	$response->execute();
+function showMini(){
+	global $bdd;
+	$response=$bdd->prepare("SELECT name_image FROM `image` ORDER BY `id_image` DESC LIMIT 15");
+	$response->execute();
 
-// 	$result=$response->fetchAll(PDO::FETCH_ASSOC);
+	$result=$response->fetchAll(PDO::FETCH_ASSOC);
 	
-// 	var_dump($result);
+	// var_dump($result);
 
-// 	return $result;
-// }
+	return $result;
+}
 
 
 // // //affiche image séléctionnée dans les miniatures

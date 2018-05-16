@@ -1,0 +1,23 @@
+body{
+	width: 100vw;
+	height: 100vh;
+}
+
+.container{
+	margin: auto;
+	width: 50%;
+
+}
+
+.miniature{
+	width: 100px;
+	height: 100px;
+}
+
+.miniature:hover{
+	position: absolute;
+	
+	width: 60%;
+	height: 60%;
+	z-index: 1000;
+}
