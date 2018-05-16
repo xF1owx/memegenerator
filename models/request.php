@@ -23,7 +23,7 @@ function uploadImg($name_image){
 
 function showMini(){
 	global $bdd;
-	$response=$bdd->prepare("SELECT id_image FROM `image` ORDER BY `id_image` DESC LIMIT 15");
+	$response=$bdd->prepare("SELECT name_image FROM `image` ORDER BY `id_image` DESC LIMIT 15");
 	$response->execute();
 
 	$result=$response->fetchAll(PDO::FETCH_ASSOC);
