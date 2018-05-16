@@ -1,34 +1,10 @@
 <?php
 
-require_once('/utils/bdd.php');
-
-$fileName = $_FILES['upFile']['name']; //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
-
-// $_FILES['icone']['type'] //Le type du fichier. Par exemple, cela peut être « image/png ».
-$_FILES['upFile']['size']; //La taille du fichier en octets.
-// $_FILES['icone']['tmp_name'] //L'adresse vers le fichier uploadé dans le répertoire temporaire.
-// $_FILES['icone']['error'] //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
+require_once('utils/bdd.php');
 
 
-var_dump($_FILES['upFile']['name']);
-var_dump($_FILES['upFile']['size']);
-
-echo "<br>";
-// var_dump($_FILES['upFile']['size']);
-
-var_dump($_FILES);
-
-
-
-
-
-
-
-
-
-
-//  // insérer le nom de l'image envoyée par l'utilisateur
-//  //  $sql = "INSERT INTO image (name_image) VALUES (\'recup_img_user\')";
+// insérer le nom de l'image envoyée par l'utilisateur
+//  $sql = "INSERT INTO image (name_image) VALUES (\'recup_img_user\')";
 function uploadImg($name_image){
     
  	global $bdd;
@@ -40,23 +16,22 @@ function uploadImg($name_image){
 
   	return $result;
 }
-if ($_FILES['upFile']['error'] > 0) $erreur = "Erreur lors du transfert"; 
-uploadImg($fileName);
 
-// // affichage des 15 dernières images
-// // $sql = "SELECT id_image FROM `image` ORDER BY `id_image` DESC LIMIT 15";
-// function showMini(){
-// 	global $bdd;
-// 	$response=$bdd->prepare("SELECT id_image FROM `image` ORDER BY `id_image` DESC LIMIT 15");
-// 	$response->execute();
 
-// 	$result=$response->fetchAll(PDO::FETCH_ASSOC);
+// affichage des 15 dernières images
+// $sql = "SELECT id_image FROM `image` ORDER BY `id_image` DESC LIMIT 15";
+
+function showMini(){
+	global $bdd;
+	$response=$bdd->prepare("SELECT id_image FROM `image` ORDER BY `id_image` DESC LIMIT 15");
+	$response->execute();
+
+	$result=$response->fetchAll(PDO::FETCH_ASSOC);
 	
-// 	var_dump($result);
+	var_dump($result);
 
-// 	return $result;
-// }
-
+	return $result;
+}
 
 
 // // //affiche image séléctionnée dans les miniatures
