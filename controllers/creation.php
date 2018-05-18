@@ -1,11 +1,15 @@
 <?php 
-$url = explode('/', $_SERVER['REQUEST_URI']);
+
 require_once('models/request.php');
 require_once('views/creation.html');
 
+var_dump($_GET['action']);
 
-$creaMeme = creaMeme($url[4]);
-var_dump($creaMeme);
+ if ($_GET['action'] == 'creation'){
+        
+
+$creaMeme = creaMeme($_GET['id']);
+var_dump($_GET['id']);
 echo "<br>";
 var_dump ($creaMeme[0]["name_image"]);
 echo "<br>";
@@ -13,3 +17,5 @@ echo $creaMeme[0]['name_image'];
 
 echo "<img src='assets/medias/img/".$creaMeme[0]["name_image"]."'>";
 
+
+}
