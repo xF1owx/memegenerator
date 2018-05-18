@@ -29,7 +29,8 @@ $result = showMini();
 
 echo "<div class='container'>";
 for ($i=0; $i<15; $i++){
-   echo "<img class='miniature' src='assets/medias/img/".$result[$i]["name_image"]."'>";
+   echo "<a href=creation/id/".$result[$i]["id_image"]."><img class='miniature' src='/assets/medias/img/".$result[$i]["name_image"]."'><a>'";
+//   echo $result[$i]["id_image"];
 }
 echo "</div>";
-// sleep(3);
+// href="index.php?action=voirFilm&id=<?php echo($row['id'])

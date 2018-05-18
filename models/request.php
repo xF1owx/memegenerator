@@ -23,34 +23,46 @@ function uploadImg($name_image){
 
 function showMini(){
 	global $bdd;
-	$response=$bdd->prepare("SELECT name_image FROM `image` ORDER BY `id_image` DESC LIMIT 15");
+	$response=$bdd->prepare("SELECT name_image, id_image FROM `image` ORDER BY `id_image` DESC LIMIT 15");
 	$response->execute();
 
 	$result=$response->fetchAll(PDO::FETCH_ASSOC);
 	
-	// var_dump($result);
+	var_dump($result);
 
 	return $result;
 }
 
-
-// // //affiche image séléctionnée dans les miniatures
-// // // $sql = "SELECT name_image FROM `image` WHERE name_image=\"rangutan-original.jpg\"";
-// function showImg($id_image){
+// function creaMeme(){
 // 	global $bdd;
-// 	$response=$bdd->prepare("SELECT name_image FROM `image` WHERE id_image=:idImage");
-// 	$response->bindParam(":idImage", $id_image, PDO::PARAM_INT);
-
+// 	$response=$bdd->prepare("SELECT name_image FROM `image` WHERE `id_image` = :idImage");
 // 	$response->execute();
 
 // 	$result=$response->fetchAll(PDO::FETCH_ASSOC);
-
-// 	var_dump($result);
 	
+// 	// var_dump($result);
 
 // 	return $result;
+
 // }
-// showImg(); 
+
+// //affiche image séléctionnée dans les miniatures
+// // $sql = "SELECT name_image FROM `image` WHERE `id_image`= :idImage";
+function creaMeme($id_image){
+	global $bdd;
+	$response=$bdd->prepare("SELECT name_image FROM `image` WHERE id_image=:idImage");
+	$response->bindParam(":idImage", $id_image, PDO::PARAM_INT);
+
+	$response->execute();
+
+	$result=$response->fetchAll(PDO::FETCH_ASSOC);
+
+	var_dump($result);
+	
+
+	return $result;
+}
+ 
 
 
 

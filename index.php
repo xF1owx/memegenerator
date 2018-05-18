@@ -23,12 +23,15 @@ case '/memegenerator/upload/':
 case '/memegenerator/upload/send':
 case '/memegenerator/upload/send/':
 require_once('controllers/upload.php');
+
 break;
 
 
 case '/memegenerator/creation':
 case '/memegenerator/creation/':
+echo "osef";
 require_once('controllers/creation.php');
+
 break;
 
 // default:
