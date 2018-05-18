@@ -10,6 +10,8 @@ if (isset($_GET['id'])){
 $creaMeme = creaMeme($_GET['id']);
 
 
+
 echo "<img class='apercu'src='/memegenerator/assets/medias/img/".$creaMeme[0]["name_image"]."'>";
+
 }
 
