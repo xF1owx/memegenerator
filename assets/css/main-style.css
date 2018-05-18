@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+  padding: 0;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #daefe6;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.roulette {
+  margin-top: 200px;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.grid {
+  width: 519px;
+}
+
+.grid-box {
+  display: inline-block;
+}
+
+.grid-row {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-row.top {
+  position: relative;
+  top: 50px;
+}
+
+.grid-row.bottom {
+  position: relative;
+  bottom: 50px;
+}
+
+.hexagon {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 173px;
+  height: 200px;
+  color: #333;
+  background: white;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  cursor: pointer;
+  transform: scale(0.8);
+  transition: all 0.4s ease-in-out;
+}
+
+.hexagon:hover {
+  transform: scale(0.9);
+}
+
+.hexagon.big {
+  z-index: 200;
+  position: relative;
+  color: white;
+  background: white;
+  transform: scale(1);
+}
+
+.hexagon.big:not(.opened):hover {
+  transform: scale(1.1);
+}
+
+.hexagon h1 {
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0.4s;
+}
+
+.hexagon .content {
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  font-size: 1.2em;
+  transform: scale(0.0834) translateX(-275%);
+  transition: all 0.4s ease-in-out;
+  transition-delay: 0;
+}
+
+.hexagon.big.opened {
+  cursor: default;
+  transform: scale(12);
+  transition-delay: 0.4s;
+}
+
+.hexagon.big.opened h1 {
+  color: transparent;
+  transition-delay: 0;
+}
+
+.hexagon.big.opened .content {
+  opacity: 1;
+  position: relative;
+  transform: scale(0.084) translateX(-275%);
+  transition-delay: 0.4s;
+}
+
+.last {
+  height: 2000px;
+  width : auto;
+  background-image: url(../medias/hexa-background.jpg);
+}
