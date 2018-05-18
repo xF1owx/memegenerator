@@ -21,3 +21,8 @@ body{
 	height: 60%;
 	z-index: 1000;
 }
+
+.apercu{
+height: 150px;
+width: 150px;
+}

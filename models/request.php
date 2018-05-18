@@ -3,6 +3,7 @@
 require_once('utils/bdd.php');
 
 
+
 // insérer le nom de l'image envoyée par l'utilisateur
 //  $sql = "INSERT INTO image (name_image) VALUES (\'recup_img_user\')";
 function uploadImg($name_image){
@@ -50,14 +51,15 @@ function showMini(){
 // // $sql = "SELECT name_image FROM `image` WHERE `id_image`= :idImage";
 function creaMeme($id_image){
 	global $bdd;
-	$response=$bdd->prepare("SELECT name_image FROM `image` WHERE id_image=:idImage");
-	$response->bindParam(":idImage", $id_image, PDO::PARAM_INT);
+	$response=$bdd->prepare("SELECT name_image, id_image FROM `image` WHERE id_image=:idImage");
+	$response->bindParam(":idImage", $id_image, PDO::FETCH_ASSOC);
 
 	$response->execute();
 
 	$result=$response->fetchAll(PDO::FETCH_ASSOC);
 
 	var_dump($result);
+
 	
 
 	return $result;
