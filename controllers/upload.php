@@ -29,7 +29,7 @@ $result = showMini();
 
 echo "<div class='container'>";
 for ($i=0; $i<15; $i++){
-   echo "<a href=index.php?action=creation&id=".$result[$i]["id_image"]."><img class='miniature' src='assets/medias/img/".$result[$i]["name_image"]."'><a>'";
+   echo "<a href='creation/".$result[$i]["id_image"]."'><img class='miniature' src='assets/medias/img/".$result[$i]["name_image"]."'><a>'";
 //   echo $result[$i]["id_image"];
 }
 echo "</div>";
