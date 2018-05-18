@@ -29,7 +29,7 @@ function showMini(){
 
 	$result=$response->fetchAll(PDO::FETCH_ASSOC);
 	
-	var_dump($result);
+	
 
 	return $result;
 }
@@ -58,7 +58,7 @@ function creaMeme($id_image){
 
 	$result=$response->fetchAll(PDO::FETCH_ASSOC);
 
-	var_dump($result);
+	
 
 	
 

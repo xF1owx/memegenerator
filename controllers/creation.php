@@ -8,7 +8,7 @@ require_once('views/creation.html');
 if (isset($_GET['id'])){
 
 $creaMeme = creaMeme($_GET['id']);
-print_r($creaMeme);
+
 
 echo "<img class='apercu'src='/memegenerator/assets/medias/img/".$creaMeme[0]["name_image"]."'>";
 }

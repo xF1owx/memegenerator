@@ -12,13 +12,12 @@
 // var_dump($url);
 // echo "<br>";
 $path = implode('/', $url);
-var_dump($path);
+
 
 switch ($path) {
 case '/memegenerator':
 case '/memegenerator/' :
 require_once('controllers/home.php');
-echo "1";
 break;
 
 case '/memegenerator/upload':
@@ -27,14 +26,14 @@ case '/memegenerator/upload/':
 // case '/memegenerator/upload/send/':
 
 require_once('controllers/upload.php');
-echo "2";
+
 break;
 
 
 case '/memegenerator/creation':
 case '/memegenerator/creation/':
 require_once('controllers/creation.php');
-echo "3";
+
 break;
 
 // default:
