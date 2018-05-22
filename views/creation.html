@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,4 +9,12 @@
 </head>
 <body>
 </body>
-</html>
+</html> -->
+
+{% extends "main.html" %} <!-- si le extends est en commentaire ça marche -->
+
+{% block content %}
+	<p>salut</p>
+	<img class='apercu' src="/memegenerator/assets/medias/img/{{creaMeme[0]['name_image']}}">
+
+{% endblock %}

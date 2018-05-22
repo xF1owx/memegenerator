@@ -1,17 +1,22 @@
 <?php 
 
 
-
+require_once 'vendor/autoload.php';
 require_once('models/request.php');
-require_once('views/creation.html');
+
+$loader = new Twig_Loader_Filesystem('views');
+$twig = new Twig_Environment($loader, array('cache' => false));
+// require_once('views/creation.html');
+
 
 if (isset($_GET['id'])){
 
-$creaMeme = creaMeme($_GET['id']);
+	$creaMeme = creaMeme($_GET['id']);
 
-var_dump($creaMeme);
+	// var_dump($creaMeme);
 
-echo "<img class='apercu'src='/memegenerator/assets/medias/img/".$creaMeme[0]["name_image"]."'>";
+	// echo "<img class='apercu'src='/memegenerator/assets/medias/img/".$creaMeme[0]["name_image"]."'>";
+	echo $twig->render('creation.html', array('creaMeme' => $creaMeme));
 
 }
 
