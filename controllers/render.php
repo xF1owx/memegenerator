@@ -15,6 +15,7 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
 var_dump($nameImage);
+
 echo "<br>";
 echo "<br>";
 echo "<br>";
@@ -22,7 +23,10 @@ echo "<br>";
 
 
 $im = imagecreatefromjpeg("assets/medias/img/".$nameImage[0]['name_image']);
-imagettftext($image , $text);
+
+// echo $twig->render('render.html', array('img' => $im));
+
+// imagettftext($image , $text);
 // $miniature = imagescale($image, 350);
 // imagejpeg($miniature);
 // Création de l'image
@@ -39,7 +43,7 @@ imagefilledrectangle($im, 0, 0, 399, 29, $white);
 $text = $_POST['saisie'];
 
 // Remplacez le chemin par votre propre chemin de police
-$font = 'arial.ttf';
+$font = '.ttf';
 
 // Ajout d'ombres au texte
 imagettftext($im, 20, 0, 11, 21, $grey, $font, $text);
@@ -49,9 +53,10 @@ imagettftext($im, 20, 0, 10, 20, $black, $font, $text);
 
 // Utiliser imagepng() donnera un texte plus claire,
 // comparé à l'utilisation de la fonction imagejpeg()
-imagejpeg($im, time());
+$pathMeme = "assets/medias/img/".time();
+imagejpeg($im, $pathMeme);
 
-echo $twig->render('render.html', array( 'im' => $im));
+echo $twig->render('render.html', array( 'im' => $pathMeme));
 
 imagedestroy($image);
 
