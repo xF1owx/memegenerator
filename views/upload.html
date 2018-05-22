@@ -1,7 +1,17 @@
 {% extends "main.html" %}
 
 {% block content %}
-    <p>salut</p>
+    
+    <form id="form" method="post" action="upload" enctype="multipart/form-data">
+
+        <p>
+            <input type="hidden" name="MAX_FILE_SIZE" value="32481010">
+            <input type="file" name="upFile">    </br> 
+            
+            <input type="submit" name="upload" value="Envoyer">
+        </p>
+
+    </form>
 
     {% for mini in showMini %}
     <a href="creation/{{mini.id_image}}"><img class="miniature" src="assets/medias/img/{{mini.name_image}}" alt=""></a>
