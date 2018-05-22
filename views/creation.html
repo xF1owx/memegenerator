@@ -1,20 +1,7 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="../assets/style.css">
-    <title>Document</title>
-</head>
-<body>
-</body>
-</html> -->
-
-{% extends "main.html" %} <!-- si le extends est en commentaire ça marche -->
+{% extends "main.html" %}
 
 {% block content %}
 	<p>salut</p>
-	<img class='apercu' src="/memegenerator/assets/medias/img/{{creaMeme[0]['name_image']}}">
+	<img class="apercu" src="/memegenerator/assets/medias/img/{{creaMeme[0]['name_image']}}">
 
 {% endblock %}
