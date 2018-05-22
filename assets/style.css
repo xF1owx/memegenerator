@@ -1,4 +1,4 @@
-body{
+/*body{
 	width: 100vw;
 	height: 100vh;
 }
@@ -20,8 +20,29 @@ body{
 	width: 60%;
 	height: 60%;
 	z-index: 1000;
-}
+}*/
 
 .apercu{
+
 	height: 350px;
+}
+
+#image{
+    position: relative;
+}
+
+#textoverimage{
+    width: 350px;
+    height: 150px;
+    padding:5px 10px 10px;
+    font-size: 30px;
+    border: 1px solid black;
+    font-family: "Arial Black", "Ubuntu";
+    color: white;
+    font: bold;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    margin-top: -200px;
+    position: absolute;
+    overflow-wrap: break-word;
 }

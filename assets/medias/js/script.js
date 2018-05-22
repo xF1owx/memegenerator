@@ -6,10 +6,10 @@ function meme(){
 }
 
 function smallLetter(text){
-    var frame = document.getElementById('paragraphe').value;
+    var frame = document.getElementById('paragraphe').innerText;
     var measure = text.length;
     var letter = 30;
-    if(measure.width > paragraphe.width-40){
+    if(measure > paragraphe.width-40){
         letter--;
     }
     else{
