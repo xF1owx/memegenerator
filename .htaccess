@@ -7,11 +7,12 @@ Options +FollowSymLinks
 RewriteEngine On
 
 RewriteRule ^home/$ index.php [L,QSA]
-RewriteRule ^/$ index.php [L,QSA]
-RewriteRule ^memegenerator/$ index.php [L,QSA]
 
-RewriteRule ^upload/$ index.php [L,QSA]
+RewriteRule ^memegenerator(\/)*$ index.php [L,QSA]
 
-RewriteRule ^creation/$ index.php [L,QSA]
+RewriteRule ^upload index.php [L,QSA]
 
-ErrorDocument 404 /memegenerator/index.php 
+RewriteRule ^creation/([0-9]+)$ index.php?id=$1 [L,QSA]
+RewriteRule ^creation index.php [L,QSA]
+
+ErrorDocument 404 /memegenerator/index.php
