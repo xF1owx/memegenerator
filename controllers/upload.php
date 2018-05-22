@@ -1,10 +1,13 @@
 <?php 
-
+require_once ('vendor/autoload.php');
 require_once('models/request.php');
-if (!isset($_FILES['upFile'])){
 
-    require_once('views/upload.html');
-}
+// if (!isset($_FILES['upFile'])){
+
+    // require_once('views/upload.html');
+    $loader = new Twig_Loader_Filesystem('./views');
+    $twig = new Twig_Environment($loader, array('cache' => false));
+// }
     
 
 
@@ -26,11 +29,19 @@ if (isset($_FILES['upFile'])){
 }
 
 $result = showMini();
+// var_dump($result);
 
-echo "<div class='container'>";
-for ($i=0; $i<15; $i++){
-   echo "<a href='creation/".$result[$i]["id_image"]."'><img class='miniature' src='assets/medias/img/".$result[$i]["name_image"]."'><a>'";
-//   echo $result[$i]["id_image"];
-}
-echo "</div>";
+$template = $twig->loadTemplate('upload.html');
+echo $template->render(array('showMini' => $result));
+
+
+
+
+
+// echo "<div class='container'>";
+// for ($i=0; $i<15; $i++){
+//    echo "<a href='creation/".$result[$i]["id_image"]."'><img class='miniature' src='assets/medias/img/".$result[$i]["name_image"]."'><a>'";
+// //   echo $result[$i]["id_image"];
+// }
+// echo "</div>";
 // href="index.php?action=voirFilm&id=<?php echo($row['id'])

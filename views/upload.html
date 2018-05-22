@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "main.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
-    <title>Document</title>
-</head>
-
-<body>
-
+{% block content %}
+    
     <form id="form" method="post" action="upload" enctype="multipart/form-data">
 
         <p>
-
             <input type="hidden" name="MAX_FILE_SIZE" value="32481010">
             <input type="file" name="upFile">    </br> 
             
@@ -23,6 +13,8 @@
 
     </form>
 
-</body>
+    {% for mini in showMini %}
+    <a href="creation/{{mini.id_image}}"><img class="miniature" src="assets/medias/img/{{mini.name_image}}" alt=""></a>
+    {% endfor %}
 
-</html>
+{% endblock %}
