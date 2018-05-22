@@ -1,4 +1,83 @@
-{% extends "main.html" %}
+{% extends "main.html" %} 
 
 {%block content%}
+<section class="home-content">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">M-GENERATOR</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="">
+                        <img src="assets/medias/m-feu.png" alt="logo-mgenerator" width="100px" height: "auto"/>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">M-GENERATOR</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Crée ton mème</a>
+                <a class="mdl-navigation__link" href="">Top 100 mèmes</a>
+                <a class="mdl-navigation__link" href="">Mon compte / inscription</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!-- Your content goes here -->
+            </div>
+        </main>
+    </div>
+
+    <section class="roulette">
+        <div class="grid">
+            <div class="grid-row top">
+                <div class="grid-box">
+                    <div class="hexagon">
+                        <img src="assets/medias/food.png" width="140px" />
+                    </div>
+                </div>
+                <div class="grid-box">
+                    <div class="hexagon">
+                        <img src="assets/medias/vip.png" width="140px" />
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-box">
+                    <div class="hexagon">
+                        <img src="assets/medias/sport.png" width="140px" />
+                    </div>
+                </div>
+                <div class="grid-box">
+                    <div class="hexagon big">
+                        <img src="assets/medias/hexa-center.png" width="250px" />
+                    </div>
+                </div>
+                <div class="grid-box">
+                    <div class="hexagon">
+                        <img src="assets/medias/gaming.png" width="140px" />
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row bottom">
+                <div class="grid-box">
+                    <div class="hexagon">
+                        <img src="assets/medias/movie.png" width="140px" />
+                    </div>
+                </div>
+                <div class="grid-box">
+                    <div class="hexagon">
+                        <img src="assets/medias/animal.png" width="140px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="last"></div>
+</section>
 {%endblock%}
