@@ -25,6 +25,10 @@ case '/memegenerator/upload/':
 require_once('controllers/upload.php');
 break;
 
+case '/memegenerator/render':
+case '/memegenerator/render/':
+require_once('controllers/render.php');
+break;
 
 case '/memegenerator/creation':
 case '/memegenerator/creation/':
