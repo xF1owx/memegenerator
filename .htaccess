@@ -12,6 +12,8 @@ RewriteRule ^memegenerator(\/)*$ index.php [L,QSA]
 
 RewriteRule ^upload index.php [L,QSA]
 
+RewriteRule ^render index.php [L,QSA]
+
 RewriteRule ^creation/([0-9]+)$ index.php?id=$1 [L,QSA]
 RewriteRule ^creation index.php [L,QSA]
 

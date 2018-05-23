@@ -51,7 +51,7 @@ function showMini(){
 // // $sql = "SELECT name_image FROM `image` WHERE `id_image`= :idImage";
 function creaMeme($id_image){
 	global $bdd;
-	$response=$bdd->prepare("SELECT name_image FROM `image` WHERE id_image=:idImage");
+	$response=$bdd->prepare("SELECT name_image, id_image FROM `image` WHERE id_image=:idImage");
 	$response->bindParam(":idImage", $id_image, PDO::FETCH_ASSOC);
 
 	$response->execute();
@@ -64,7 +64,7 @@ function creaMeme($id_image){
 
 	return $result;
 }
- 
+
 
 
 
