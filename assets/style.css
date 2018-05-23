@@ -14,13 +14,13 @@ body{
 	height: 100px;
 }
 
-.miniature:hover{
+/* .miniature:hover{
 	position: absolute;
 	
 	width: 60%;
 	height: 60%;
 	z-index: 1000;
-}
+} */
 
 .apercu{
 height: 350px;
