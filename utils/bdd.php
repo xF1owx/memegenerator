@@ -1,10 +1,11 @@
 <?php
+
 try{
   
-    $bdd=new PDO('mysql:host=localhost;dbname=meme_gen;charset=utf8','root','');
-    }
-    catch(Exeption $e)
-    {      
-    die('Erreur:'.$e->getMessage());
-    }
+    $bdd=new PDO('mysql:host=localhost;dbname=meme_gen;charset=utf8','admin','online@2017');
+}
+catch(Exeption $e)
+{      
+	die('Erreur:'.$e->getMessage());
+}
     

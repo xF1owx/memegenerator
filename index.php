@@ -1,4 +1,4 @@
-<?php
+ds <?php
 
  $url = explode('/', $_SERVER['REQUEST_URI'], 4);
 
@@ -22,22 +22,20 @@ break;
 
 case '/memegenerator/upload':
 case '/memegenerator/upload/':
-// case '/memegenerator/upload/send':
-// case '/memegenerator/upload/send/':
-
 require_once('controllers/upload.php');
-
 break;
 
+case '/memegenerator/render':
+case '/memegenerator/render/':
+require_once('controllers/render.php');
+break;
 
 case '/memegenerator/creation':
 case '/memegenerator/creation/':
 require_once('controllers/creation.php');
-
 break;
 
-// default:
-
-// require_once('controllers/404-error.php');
-// break;
+default:
+require_once('controllers/404-error.php');
+break;
 } 
