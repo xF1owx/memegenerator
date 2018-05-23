@@ -1,4 +1,4 @@
-<?php
+ds <?php
 
  $url = explode('/', $_SERVER['REQUEST_URI'], 4);
 
