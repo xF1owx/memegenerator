@@ -36,28 +36,28 @@ $im = imagecreatefromjpeg("assets/medias/img/".$nameImage[0]['name_image']);
 $white = imagecolorallocate($im, 255, 255, 255);
 $grey = imagecolorallocate($im, 128, 128, 128);
 $black = imagecolorallocate($im, 0, 0, 0);
-imagefilledrectangle($im, 0, 0, 399, 29, $white);
+// imagefilledrectangle($im, 0, 0, 399, 29, $white);
 
 // Le texte à dessiner
 
 $text = $_POST['saisie'];
 
 // Remplacez le chemin par votre propre chemin de police
-$font = '.ttf';
+$font = 'assets/Homer_Simpson_Revised.ttf';
 
-// Ajout d'ombres au texte
-imagettftext($im, 20, 0, 11, 21, $grey, $font, $text);
+// // Ajout d'ombres au texte
+// imagettftext($im, 20, 0, 11, 21, $grey, $font, $text);
 
 // Ajout du texte
 imagettftext($im, 20, 0, 10, 20, $black, $font, $text);
 
 // Utiliser imagepng() donnera un texte plus claire,
 // comparé à l'utilisation de la fonction imagejpeg()
-$pathMeme = "assets/medias/img/".time();
+$pathMeme = "assets/medias/img/".time().".jpg";
 imagejpeg($im, $pathMeme);
 
 echo $twig->render('render.html', array( 'im' => $pathMeme));
 
-imagedestroy($image);
+imagedestroy($im);
 
 // echo $twig->render('render.html', array('memeRender' => $memeRender));
