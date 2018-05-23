@@ -63,4 +63,6 @@ echo $twig->render('render.html', array( 'im' => $pathMeme));
 
 imagedestroy($im);
 
+
+
 // echo $twig->render('render.html', array('memeRender' => $memeRender));

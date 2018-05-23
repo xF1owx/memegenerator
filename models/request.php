@@ -79,3 +79,12 @@ function uploadMeme($name_meme){
 }
 
 
+function lastId(){
+	global $bdd;
+	$response=$bdd->prepare("SELECT MAX(id_image) AS lastId FROM image");
+	$response->execute();
+
+	$result=$response->fetch(PDO::FETCH_ASSOC);
+
+	return $result;
+}

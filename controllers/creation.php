@@ -15,7 +15,6 @@ if (isset($_GET['id'])){
 
 	
 	echo $twig->render('creation.html', array('creaMeme' => $creaMeme));
-
 }
 
 
