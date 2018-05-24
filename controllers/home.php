@@ -7,6 +7,6 @@ $twig = new Twig_Environment($loader, array('cache' => false));
 require_once('models/request.php');
 
 
-$template = $twig->load('main.html');
+$template = $twig->load('home.html');
 
 echo $template->render(array());
