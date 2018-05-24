@@ -12,7 +12,7 @@ $redirection = false;
 
 if (isset($_FILES['upFile'])){
     
-$redirection = true;
+    $redirection = true;
 
     $path = $_SERVER['DOCUMENT_ROOT'].'/memegenerator/assets/medias/imgtemp/'.$_FILES['upFile']['name'];
     move_uploaded_file($_FILES['upFile']['tmp_name'], $path);

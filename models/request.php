@@ -69,13 +69,13 @@ function creaMeme($id_image){
 function uploadMeme($name_meme){
     
 	global $bdd;
-	$response=$bdd->prepare("INSERT INTO meme (name_meme) VALUES (:name_meme)");
-	$response->bindParam(":name_meme", $name_meme, PDO::PARAM_STR);
+	$response=$bdd->prepare("INSERT INTO meme(name_meme) VALUES (:name_meme)");
+	$response->bindParam(":name_meme", $name_meme, PDO::PARAM_INT);
 	$response->execute();
 
-   $result=$response->fetchAll(PDO::FETCH_ASSOC);
+	$result=$response->fetch(PDO::FETCH_ASSOC);
 
-	 return $result;
+	return $result;
 }
 
 

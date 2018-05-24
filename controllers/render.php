@@ -5,20 +5,20 @@ require_once('models/request.php');
 $loader = new Twig_Loader_Filesystem('./views');
 $twig = new Twig_Environment($loader, array('cache' => false));
 
-var_dump($_POST);
+// var_dump($_POST);
 // $memeRender = 
 
 
 $idImage = $_POST['idImage'];
 $nameImage = creaMeme($idImage);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-var_dump($nameImage);
+// echo "<br>";
+// echo "<br>";
+// echo "<br>";
+// var_dump($nameImage);
 
-echo "<br>";
-echo "<br>";
-echo "<br>";
+// echo "<br>";
+// echo "<br>";
+// echo "<br>";
 
 
 
@@ -35,12 +35,13 @@ $im = imagecreatefromjpeg("assets/medias/img/".$nameImage[0]['name_image']);
 // Création de quelques couleurs
 $white = imagecolorallocate($im, 255, 255, 255);
 $grey = imagecolorallocate($im, 128, 128, 128);
-$black = imagecolorallocate($im, 255, 255, 255);
+$black = imagecolorallocate($im, 0, 0, 0);
 // imagefilledrectangle($im, 0, 0, 399, 29, $white);
 
 // Le texte à dessiner
 
 $text = $_POST['saisie'];
+var_dump($text);
 
 
 // Remplacez le chemin par votre propre chemin de police
@@ -50,13 +51,13 @@ $font = 'assets/Homer_Simpson_Revised.ttf';
 // imagettftext($im, 20, 0, 11, 21, $grey, $font, $text);
 
 // Ajout du texte
-imagettftext($im, 80, 0, 50, 320, $black, $font, $text);
+imagettftext($im, 80, 0, 50, 320, $white, $font, $text);
 
 // Utiliser imagepng() donnera un texte plus claire,
 // comparé à l'utilisation de la fonction imagejpeg()   
 $memeName = time();
-$memeRender = uploadMeme($memeName);
-$pathMeme = "assets/medias/memes/".$memeName.".jpg";
+uploadMeme($memeName);
+$pathMeme = "assets/medias/meme/".$memeName.".jpg";
 imagejpeg($im, $pathMeme);
 
 echo $twig->render('render.html', array( 'im' => $pathMeme));
