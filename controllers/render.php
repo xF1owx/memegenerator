@@ -8,9 +8,12 @@ $twig = new Twig_Environment($loader, array('cache' => false));
 // var_dump($_POST);
 // $memeRender = 
 
-
 $idImage = $_POST['idImage'];
+var_dump($_POST);
+
+
 $nameImage = creaMeme($idImage);
+// var_dump($nameImage);
 // echo "<br>";
 // echo "<br>";
 // echo "<br>";
