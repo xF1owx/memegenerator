@@ -1,20 +1,55 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
 #frame{
 /*    width: 50%;*/
     position: relative;
+    width: 100vw;
+    height: auto;
 }
 
 #textoverimage{
-    width: 50%;
-    height: 150px;
+    width: 100vw;
+    height: 20%;
     padding:5px 10px 10px;
-    font-size: 10em; !important
-    border: 1px solid black;
-    font-family: "Arial Black"/*, "Ubuntu"*/;
-    color: white;
-    font: bold;
-    -webkit-text-stroke-width: 0.1px;
-    -webkit-text-stroke-color: black;
-    margin-top: -200px;
+    /* border: 1px solid black; */
+    margin-top: -128px;
     position: absolute;
     overflow-wrap: break-word;
+}
+
+#paragraphe{
+    font-size: 2em;
+    font-family: "Arial Black", "Ubuntu";
+    color: white;
+    font: bolder;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-align: center;
+}
+
+.apercu{
+
+	height: 350px;
+}
+
+.content-miniature{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: auto;    
+}
+
+.miniature{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1em;
+    border-radius: 100%;
+
+
 }

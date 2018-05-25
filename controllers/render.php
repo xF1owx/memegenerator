@@ -9,7 +9,7 @@ $twig = new Twig_Environment($loader, array('cache' => false));
 // $memeRender = 
 
 $idImage = $_POST['idImage'];
-var_dump($_POST);
+
 
 
 $nameImage = creaMeme($idImage);
@@ -44,7 +44,7 @@ $black = imagecolorallocate($im, 0, 0, 0);
 // Le texte à dessiner
 
 $text = $_POST['saisie'];
-var_dump($text);
+
 
 
 // Remplacez le chemin par votre propre chemin de police

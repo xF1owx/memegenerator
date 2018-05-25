@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 
 
-{% block link %}<link rel="stylesheet" href="/memegenerator/assets/style.css">{% endblock %}
+{% block link %}<link rel="stylesheet" href="assets/css/style.css">{% endblock %}
 {% block content %}
 
     
@@ -15,9 +15,10 @@
         </p>
 
     </form>
-
-    {% for mini in showMini %}
-    <a href="creation/{{mini.id_image}}"><img class="miniature" src="assets/medias/img/{{mini.name_image}}" alt=""></a>
-    {% endfor %}
+    <div class="content-miniature">
+        {% for mini in showMini %}
+            <a href="creation/{{mini.id_image}}"><img class="miniature" src="assets/medias/img/{{mini.name_image}}" alt=""></a>
+        {% endfor %}
+    </div>
 
 {% endblock %}

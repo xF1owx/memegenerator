@@ -2,7 +2,7 @@
 
 try{
   
-    $bdd=new PDO('mysql:host=localhost;dbname=meme_gen;charset=utf8','root','online@2017');
+    $bdd=new PDO('mysql:host=localhost;dbname=meme_gen;charset=utf8','admin','online@2017');
 }
 catch(Exeption $e)
 {      

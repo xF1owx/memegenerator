@@ -1,4 +1,4 @@
-/*body{
+body{
 	width: 100vw;
 	height: 100vh;
 }
@@ -12,17 +12,12 @@
 .miniature{
 	width: 100px;
 	height: 100px;
-}*/
+}
 
-/* .miniature:hover{
+.miniature:hover{
 	position: absolute;
 	width: 60%;
 	height: 60%;
 	z-index: 1000;
-} */
+} 
 
-/*.apercu{
-
-	height: 350px;
-}
-*/
